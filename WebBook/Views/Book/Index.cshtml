@@ -1,0 +1,69 @@
+﻿@model IEnumerable<BookViewModel>;
+@{
+    ViewData["Title"] = "Booklist";
+}
+
+@* <span id="GetBookAll" data-request-url="@Url.Action("GetAll","Book")"></span> *@
+
+<a class="btn btn-success float-end" asp-controller="Book" asp-action="Create">สร้าง</a>
+
+<table id="dataTables" class="table table-hover" style="width:100%">
+    <thead>
+        <tr>
+            <th>Book Id</th>
+            <th>Book Code</th>
+            <th>Book Name</th>
+            <th>Book Author</th>
+            <th>Price</th> 
+            <th>Publish_Date</th>
+            <th>Create Date</th>
+            <th>Modify Date</th>   
+            <th>แสดง</th>
+            <th>แก้ไข</th>
+            <th>ลบ</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Book_Id</td>
+                <td>@item.Book_Code</td>
+                <td>@item.Book_Name</td>
+                <td>@item.Book_Author</td>
+                <td>@item.Price</td>
+                <td>@item.Publish_Date</td>
+                <td>@item.Create_Date</td>
+                <td>@(item.Modify_Date == DateTime.MinValue ? "" : item.Modify_Date )</td>
+                <td>
+                   <a class="btn btn-info"
+                   asp-controller="Book"
+                   asp-action="Detail"
+                   asp-route-code="@item.Book_Code"
+                   >แสดง</a>
+                </td>
+                <td>
+                    <a class="btn btn-warning"
+                    asp-controller="Book"
+                    asp-action="Edit"
+                    asp-route-code="@item.Book_Code"
+                   >แก้ไข</a>
+
+
+                </td>
+                <td>
+                    <a class="btn btn-danger"
+                    asp-controller="Book" 
+                    asp-action="Delete" 
+                    asp-route-code="@item.Book_Code"
+                    onclick="return confirm('ต้องการลบ @item.Book_Code หรือไม่?')"
+                    >ลบ</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+   

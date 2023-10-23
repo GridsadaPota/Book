@@ -1,0 +1,58 @@
+﻿@model BookViewModel;
+@{
+    ViewData["Title"] = "Detail";
+}
+<div class="mb-3 row">
+    <label for="Book_Id" class="col-sm-2 col-form-label">Book Id</label>
+    <div class="col-sm-10">
+        <input type="text" asp-for="Book_Id" readonly class="form-control-plaintext" >
+    </div>
+</div>
+<div class="mb-3 row">
+    <label for="Book_Code" class="col-sm-2 col-form-label">Book Code</label>
+    <div class="col-sm-10">
+        <input type="text" asp-for="Book_Code" readonly class="form-control-plaintext">
+    </div>
+</div>
+<div class="mb-3 row">
+    <label for="Book_Name" class="col-sm-2 col-form-label">Book Name</label>
+    <div class="col-sm-10">
+        <input type="text" asp-for="Book_Name" readonly class="form-control-plaintext">
+    </div>
+</div>
+<div class="mb-3 row">
+    <label for="Book_Author" class="col-sm-2 col-form-label">Book Author</label>
+    <div class="col-sm-10">
+        <input type="text" asp-for="Book_Author" readonly class="form-control-plaintext">
+    </div>
+</div>
+<div class="mb-3 row">
+    <label for="Price" class="col-sm-2 col-form-label">Price</label>
+    <div class="col-sm-10">
+        <input type="text" asp-for="Price" readonly class="form-control-plaintext">
+    </div>
+</div>
+<div class="mb-3 row">
+    <label for="Publish_Date" class="col-sm-2 col-form-label">Publish Date</label>
+    <div class="col-sm-10">
+        <input type="text" asp-for="Publish_Date" readonly class="form-control-plaintext">
+    </div>
+</div>
+<div class="mb-3 row">
+    <label for="Create_Date" class="col-sm-2 col-form-label">Create Date</label>
+    <div class="col-sm-10">
+        <input type="text" asp-for="Create_Date" readonly class="form-control-plaintext">
+    </div>
+</div>
+<div class="mb-3 row">
+    <label for="Modify_Date" class="col-sm-2 col-form-label">Modify_Date</label>
+    <div class="col-sm-10">
+        <input type="text" asp-for="Modify_Date" readonly class="form-control-plaintext">
+    </div>
+</div>
+
+<div class="mb-3 row">
+   <button type="button" class="btn btn-success" onclick="history.go(-1); return false">Back</button>
+</div>
+
+
